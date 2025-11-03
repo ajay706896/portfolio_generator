@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Portfolio Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&family=Lato:wght@300;400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="form-container">
+            <header class="form-header">
+                <h1>Portfolio Generator ✨</h1>
+                <p>Fill in your details to instantly generate a professional portfolio.</p>
+            </header>
+            
+            <form id="portfolio-form">
+                <fieldset class="form-section">
+                    <legend>Setup</legend>
+                    <div class="form-group">
+                        <label for="template">Choose a Template:</label>
+                        <select id="template" name="template">
+                            <option value="modern" selected>Modern</option>
+                            <option value="minimal">Minimal</option>
+                            <option value="creative">Creative</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-photo">Profile Photo</label>
+                        <input type="file" id="profile-photo" accept="image/*">
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>Basic Info</legend>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="e.g., Jane Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">About / Bio</label>
+                        <textarea id="bio" rows="5" placeholder="A passionate full-stack developer with a love for creating intuitive and dynamic web experiences..."></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>Skills</legend>
+                    <div class="skill-input-group">
+                        <input type="text" id="skill-input" placeholder="e.g., JavaScript">
+                        <button type="button" id="add-skill-btn" class="add-btn-small">Add</button>
+                    </div>
+                    <div id="skills-container" class="tags-container"></div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>Projects</legend>
+                    <div id="projects-container"></div>
+                    <button type="button" id="add-project-btn" class="add-btn">Add Another Project</button>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>Experience</legend>
+                    <div id="experience-container"></div>
+                    <button type="button" id="add-experience-btn" class="add-btn">Add Another Experience</button>
+                </fieldset>
+                
+                <fieldset class="form-section">
+                    <legend>Education</legend>
+                    <div id="education-container"></div>
+                    <button type="button" id="add-education-btn" class="add-btn">Add Another Education</button>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>Achievements Gallery</legend>
+                    <div id="achievements-container"></div>
+                    <button type="button" id="add-achievement-btn" class="add-btn">Add Another Achievement</button>
+                </fieldset>
+                
+                <fieldset class="form-section">
+                    <legend>Contact</legend>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="e.g., your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn URL</label>
+                        <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                    <div class="form-group">
+                        <label for="github">GitHub URL</label>
+                        <input type="url" id="github" placeholder="https://github.com/yourusername">
+                    </div>
+                </fieldset>
+            </form>
+            
+            <button id="download-btn" class="cta-button">Download Portfolio</button>
+        </div>
+
+        <div class="preview-container">
+            <div id="portfolio-preview">
+                </div>
+        </div>
+    </div>
+    
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
